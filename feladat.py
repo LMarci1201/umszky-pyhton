@@ -30,8 +30,19 @@ else:
 #     ▪ Füzze az eredményt a 'változás' lista végéhez!
 # ▪ A ciklus után írja képernyőre a kiszámolt adatokat!
 
+valtozas = {}
+i=0
+while i <len(december):
+    szazalek= (december[i] / november[i]-1) *100
+    kerekitve=round(szazalek,2)
+    valtozas.append(kerekitve)
+    i+=1
 
 # 3. feladat
 # ▪ importálja a json modult!
 # ▪ készítsen az adatokból szótárat
 # ▪ mentse fájlba data.json néven!
+
+import json
+with open("data.json","w") as fajl:
+    json.dump(valtozas,fajl)
